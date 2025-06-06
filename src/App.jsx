@@ -6,11 +6,13 @@ import Home from "./screens/Home";
 import About from "./screens/About";
 import Contact from "./screens/Contact";
 import Country from "./screens/Country";
+import ErrorPage from "./screens/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
