@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "India",
+    "capital": "New Delhi",
+    "importantTouristPlace": "Taj Mahal"
+  },
+  {
+    "id": 2,
+    "name": "France",
+    "capital": "Paris",
+    "importantTouristPlace": "Eiffel Tower"
+  },
+  {
+    "id": 3,
+    "name": "Japan",
+    "capital": "Tokyo",
+    "importantTouristPlace": "Mount Fuji"
+  },
+  {
+    "id": 4,
+    "name": "Brazil",
+    "capital": "Brasília",
+    "importantTouristPlace": "Christ the Redeemer"
+  },
+  {
+    "id": 5,
+    "name": "Egypt",
+    "capital": "Cairo",
+    "importantTouristPlace": "Pyramids of Giza"
+  },
+  {
+    "id": 6,
+    "name": "Australia",
+    "capital": "Canberra",
+    "importantTouristPlace": "Sydney Opera House"
+  },
+  {
+    "id": 7,
+    "name": "Italy",
+    "capital": "Rome",
+    "importantTouristPlace": "Colosseum"
+  },
+  {
+    "id": 8,
+    "name": "United States",
+    "capital": "Washington, D.C.",
+    "importantTouristPlace": "Statue of Liberty"
+  }
+]

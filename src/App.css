@@ -77,7 +77,7 @@ button {
 /* Layout  */
 
 .container {
-  max-width: 140rem;
+  max-width: 90rem;
   margin: auto;
 }
 
@@ -597,4 +597,8 @@ contact us Page ends here
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.no-underline {
+  text-decoration: none;
 }
