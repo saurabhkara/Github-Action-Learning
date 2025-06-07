@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "MdPlace",
+    "title": "Find me",
+    "details": "Bihar, India"
+  },
+  {
+    "icon": "IoCallSharp",
+    "title": "Call me",
+    "details": "99999999999"
+  },
+  {
+    "icon": "TbMailPlus",
+    "title": "Mail me",
+    "details": "saurabhkumar679@gmail.com"
+  }
+]

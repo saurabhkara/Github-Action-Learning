@@ -315,7 +315,6 @@ nav ul {
   display: flex;
   gap: 2.4rem;
   align-items: center;
-
   & .icon {
     color: #3a4ed5;
     font-size: 3.6rem;
@@ -508,8 +507,7 @@ contact us page
 --------------- */
 
 .section-contact {
-  margin: 9.6rem auto;
-
+  margin: 7rem auto;
   & hr {
     border-color: rgba(255, 255, 255, 0.6);
   }
