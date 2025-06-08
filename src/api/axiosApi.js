@@ -5,9 +5,16 @@ const api = axios.create({
 });
 
 function getCoutryList() {
-  return api.get("/all?fields=languages,capital,code,population,region,flags");
+  return api.get(
+    "/all?fields=languages,capital,code,population,region,flags,name"
+  );
 }
 
-export { getCoutryList };
+function getCountryDetail(country) {
+  return api.get(
+    `/name/${country}?fullText=true&fields=name,population,region,subregion,capital,tld,currencies,languages,borders,flags`
+  );
+}
+export { getCoutryList, getCountryDetail };
 
 //https://restcountries.com/v3.1/all?fields=languages,capital,code,population,region,flags
