@@ -1,0 +1,11 @@
+name: deploy dist
+on: [push, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        run: |
+          echo "Repo Cloning"
+          echo "Repo ${{github}}"
+          git clone https://github.com/saurabhkara/${{github.repository}}.git
