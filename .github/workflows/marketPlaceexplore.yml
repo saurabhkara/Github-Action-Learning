@@ -1,0 +1,7 @@
+name: marketPlaceexplore
+on: [push, workflow_dispatch]
+jobs:
+  market:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
