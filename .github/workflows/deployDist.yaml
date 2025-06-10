@@ -1,11 +1,11 @@
-name: deploy dist
-on: [push, workflow_dispatch]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get code
-        run: |
+name: deploy dist #Workflow name
+on: [push, workflow_dispatch] #Workflow triggers on push and manual dispatch
+jobs: #jobs to run in the workflow
+  test: # Job name
+    runs-on: ubuntu-latest #runner environment(machine) to run the job
+    steps: #steps to execute in the job
+      - name: Get code # Step name
+        run: | # | operator is used to run multiple lines of commands
           echo "Repo Cloning"
-          echo "Repo ${{toJson(github)}}"
+          echo "Repo ${{toJson(github)}}" #to print the repository information
           git clone https://github.com/${{github.repository}}.git
