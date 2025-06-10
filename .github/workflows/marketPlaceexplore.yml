@@ -12,3 +12,7 @@ jobs:
           node-version: "20"
       - name: Get Node Version
         run: node -v
+      - name: install dependencies
+        run: yarn install
+      - name: Run testcases
+        run: yarn test
