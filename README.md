@@ -62,3 +62,12 @@ jobs: # Define jobs to run in the workflow
         run: yarn test
 
 ```
+
+## To skip workflow trigger add [skip ci]
+
+example
+
+```
+git commit -m "readme file updated [skip ci]"
+git push
+```
