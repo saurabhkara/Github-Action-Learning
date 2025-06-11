@@ -1,5 +1,6 @@
 name: marketPlaceexplore # Workflow name
-on: [push, workflow_dispatch] #Workflow triggers on push and manual dispatch
+# on: [push, workflow_dispatch] #Workflow triggers on push and manual dispatch
+on: workflow_dispatch #Workflow triggers on push and manual dispatch
 jobs: # Define jobs to run in the workflow
   market: # Job name
     runs-on: ubuntu-latest # Runner environment(machine) to run the job

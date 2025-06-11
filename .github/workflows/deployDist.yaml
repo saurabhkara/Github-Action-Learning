@@ -1,5 +1,6 @@
 name: deploy dist #Workflow name
-on: [push, workflow_dispatch] #Workflow triggers on push and manual dispatch
+#on: [push, workflow_dispatch] #Workflow triggers on push and manual dispatch
+on: workflow_dispatch #Workflow triggers on manual dispatch
 jobs: #jobs to run in the workflow
   test: # Job name
     runs-on: ubuntu-latest #runner environment(machine) to run the job

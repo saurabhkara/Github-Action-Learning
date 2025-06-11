@@ -1,5 +1,6 @@
 name: Greeting #Workflow
-on: push #Event will trigger on push
+# on: push #Event will trigger on push
+on: workflow_dispatch #Event will  run on manual dispatch
 jobs: #job
   greet: #job named greet
     runs-on: ubuntu-latest #will run on ubuntu machine

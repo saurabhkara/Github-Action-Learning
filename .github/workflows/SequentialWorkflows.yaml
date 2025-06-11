@@ -25,4 +25,4 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Build the project
-        run: echo" Building Project"
+        run: echo "Building Project"
