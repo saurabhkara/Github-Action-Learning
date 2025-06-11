@@ -15,7 +15,7 @@ jobs:
           yarn install
           yarn test
   deploy:
-    needs: testcase
+    needs: testcase #this job will start running once it testcase job will be done
     runs-on: ubuntu-latest
     steps:
       - name: clone the repo

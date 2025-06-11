@@ -2,7 +2,11 @@
 
 YAML ain't markup language
 
+YAML is a human-readable data serialization language used for configuration files and data exchange.
+
 ### Github Action
+
+GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline
 
 ## First Practice
 
@@ -70,4 +74,43 @@ example
 ```
 git commit -m "readme file updated [skip ci]"
 git push
+```
+
+## Parallel and Sequentially workflow
+
+Parallel execution, where multiple jobs run concurrently, is the default behavior.
+
+To run jobs sequentially, you need to define dependencies using needs keyword.
+
+## Fourth Practice
+
+```
+name: TestAndDeploy
+on: [push, workflow_dispatch]
+jobs:
+  testcase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone the repo
+        uses: actions/checkout@v4
+      - name: Install node js
+        uses: actions/setup-node@v4 # This action sets up a Node.js environment
+        with:
+          node-version: "20"
+      - name: Install Dependencies
+        run: |
+          yarn install
+          yarn test
+  deploy:
+    needs: testcase #this job will start running once it testcase job will be done
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone the repo
+        uses: actions/checkout@v4
+      - name: install node
+        uses: actions/setup-node@v4
+      - name: Install Dependencies
+        run: yarn install
+      - name: Build the project
+        run: echo "Building Project"
 ```
