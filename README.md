@@ -8,7 +8,7 @@ YAML is a human-readable data serialization language used for configuration file
 
 GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline
 
-## First Practice
+### First Practice
 
 ```
 name: Greeting #Workflow
@@ -22,7 +22,7 @@ jobs: #job
 
 ```
 
-## Second Practice
+### Second Practice
 
 Expression, Context
 
@@ -41,7 +41,7 @@ jobs: #jobs to run in the workflow
 
 ```
 
-## Third Practice
+### Third Practice
 
 Market Place for actions
 
@@ -82,7 +82,7 @@ Parallel execution, where multiple jobs run concurrently, is the default behavio
 
 To run jobs sequentially, you need to define dependencies using needs keyword.
 
-## Fourth Practice
+### Fourth Practice
 
 ```
 name: TestAndDeploy
@@ -113,4 +113,15 @@ jobs:
         run: yarn install
       - name: Build the project
         run: echo "Building Project"
+```
+
+## Caching
+
+To make your workflows faster and more efficient, you can create and use caches for dependencies and other commonly reused files
+
+###
+
+```
+
+
 ```
