@@ -1,0 +1,39 @@
+name: Cache and Deploy
+on: [push]
+jobs:
+  CloneRepo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone the repo
+        uses: actions/checkout@v4
+      - name: Install the node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Cache the dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies and test
+        run: |
+          yarn install
+          yarn test
+  BuildDeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone the repo
+        uses: actions/checkout@v4
+      - name: Install the node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Get the cacehe
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Build the react project
+        run: yarn build
+      - name: Print
+        run: echo " Build generated successfully"
