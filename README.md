@@ -181,8 +181,8 @@ on:
     branches:
       - main
     paths-ignore:
-      - "./github/workflows/*"
-      - "./README.md"
+      - ".github/workflows/*"
+      - "README.md"
 jobs:
   filter:
     runs-on: ubuntu-latest
