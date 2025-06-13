@@ -11,4 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run the workflow
-        run: echo 'Successfully running'
+        run: |
+          echo 'Successfully running'
+          echo 'Testing'
