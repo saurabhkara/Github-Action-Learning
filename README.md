@@ -175,5 +175,19 @@ Filter the branches and files
 
 ```
 
+name: filterBranch
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "./github/workflows/*"
+      - README.md
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run the workflow
+        run: echo 'Successfully running'
 
 ```
