@@ -182,7 +182,7 @@ on:
       - main
     paths-ignore:
       - "./github/workflows/*"
-      - README.md
+      - "./README.md"
 jobs:
   filter:
     runs-on: ubuntu-latest
