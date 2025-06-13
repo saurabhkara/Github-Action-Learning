@@ -122,6 +122,58 @@ To make your workflows faster and more efficient, you can create and use caches 
 ### Fifth Practice
 
 ```
+name: Cache and Deploy
+on: [workflow_dispatch,push]
+jobs:
+  CloneRepo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone the repo
+        uses: actions/checkout@v4
+      - name: Install the node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Cache Dependencies
+        uses: actions/cache@v4 # this action is used to cache the job
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies and test
+        run: |
+          yarn install
+  BuildDeploy:
+    needs: CloneRepo
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone the repo
+        uses: actions/checkout@v4
+      - name: Install the node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Get Cached Dependencies
+        uses: actions/cache@v4 # action to get cached data
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Build the react project
+        run: |
+          yarn install
+          yarn build
+      - name: Print
+        run: echo " Build generated successfully"
+```
+
+## Filter
+
+Filter the branches and files
+
+### sixth Practice
+
+```
 
 
 ```

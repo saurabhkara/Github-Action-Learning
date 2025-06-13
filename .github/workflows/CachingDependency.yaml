@@ -1,5 +1,5 @@
 name: Cache and Deploy
-on: [push]
+on: [workflow_dispatch]
 jobs:
   CloneRepo:
     runs-on: ubuntu-latest
@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: "20"
       - name: Cache Dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v4 # this action is used to cache the job
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: "20"
       - name: Get Cached Dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v4 # action to get cached data
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
