@@ -14,7 +14,7 @@ export default function Home() {
             search and filter through various countries to find the details you.
           </p>
           <button className="btn btn-darken btn-inline bg-white-box">
-            Explore Now <FaLongArrowAltRight />
+            Explore right Now <FaLongArrowAltRight />
           </button>
         </div>
         <div className="hero-image">
