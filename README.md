@@ -191,3 +191,15 @@ jobs:
         run: echo 'Successfully running'
 
 ```
+
+## Artifact
+
+In GitHub Actions, an artifact is a file or collection of files that you want to save or pass between jobs.
+
+### Seventh Practice
+
+Download Artifact
+
+```
+
+```
