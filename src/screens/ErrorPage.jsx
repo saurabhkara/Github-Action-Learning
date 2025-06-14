@@ -7,7 +7,7 @@ export default function ErrorPage() {
     <div>
       <h1>Error Page</h1>
       <Link to="/">
-        <button>Go to Home</button>
+        <button>Back to Home</button>
       </Link>
     </div>
   );
