@@ -9,4 +9,5 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/setupTests.js",
   },
+  base: "/Github-Action-Learning/",
 });
