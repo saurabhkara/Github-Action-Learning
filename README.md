@@ -201,5 +201,65 @@ In GitHub Actions, an artifact is a file or collection of files that you want to
 Download Artifact
 
 ```
+name: TestBuildDeployDownload
+on:
+  push:
+    branches:
+      - main
+    paths-ignore: ".github/workflows/*"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v4
+      - name: Install the node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Cache Dependencies
+        uses: actions/cache@v4 # this action is used to cache the job
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies and test
+        run: |
+          yarn install
+          yarn test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v4
+      - name: Install the node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Get Cached Dependencies
+        uses: actions/cache@v4 # action to get cached data
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Build the react project
+        run: |
+          yarn install
+          yarn build
+      - name: Upload Dist Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-files
+          path: dist
+
+```
+
+## Deploy React APP
+
+### Eighth Practice
+
+```
+
 
 ```
