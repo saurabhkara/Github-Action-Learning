@@ -19,7 +19,7 @@ export default function About() {
                   {item.capital}
                 </p>
                 <p>
-                  <span className="card-description">Famous Place :</span>
+                  <span className="card-description">Famous Place:</span>
                   {item.importantTouristPlace}
                 </p>
               </div>
