@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section className="section-about container">
       <h2 className="container-title">
-        Here are the Interesting tourist places
+        Here are the Interesting tourist places for new people
         <br />
         We are proud of
       </h2>
